@@ -5,8 +5,6 @@ import (
 	"time"
 	"math/rand"
 )
-var n int
-n := 1000
 
 
 func bubble_sort(inputlist [] int){
@@ -16,7 +14,7 @@ func bubble_sort(inputlist [] int){
 	for swapped{
 		swapped = false
 
-		for i:=1; i<n; i++{
+		for i:=1; i<1000; i++{
 			if inputlist[i-1]> inputlist[i]{
 				inputlist[i-1], inputlist[i] = inputlist[i], inputlist[i-1]
 				swapped = true
@@ -29,11 +27,12 @@ func bubble_sort(inputlist [] int){
 
 
 func main(){
-	var mylist [n]int
+	var inputlist []int
 
 	for{
-		for i:=0; i < n; i++{
-			inputlist = append(inputlist, rand.Intn(100))
+		rand.Seed(time.Now().UnixNano())
+		for i:=0; i < 1000; i++{
+			inputlist = append(inputlist, rand.Intn(1000))
 		}
 
 		start:= time.Now()
